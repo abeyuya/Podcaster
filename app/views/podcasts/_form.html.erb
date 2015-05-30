@@ -1,0 +1,66 @@
+<%= form_for(@podcast) do |f| %>
+  <% if @podcast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@podcast.errors.count, "error") %> prohibited this podcast from being saved:</h2>
+
+      <ul>
+      <% @podcast.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td><%= f.label :title %></td>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :subtitle %></td>
+        <td><%= f.text_field :subtitle %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :summary %></td>
+        <td><%= f.text_field :summary %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :search_keywords %></td>
+        <td><%= f.text_field :search_keywords %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :mail_address %></td>
+        <td><%= f.text_field :mail_address %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :media_type %></td>
+        <td><%= f.select :media_type, options_for_select(["nothing", "sound_only", "video_only", "image_only", "sound_and_video"], @podcast.media_type) %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :podcaster_name %></td>
+        <td><%= f.text_field :podcaster_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :copyright %></td>
+        <td><%= f.text_field :copyright %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :include_adult_content %></td>
+        <td><%= f.select :include_adult_content, options_for_select(["NO", "YES"], (@podcast.include_adult_content ? 1 : 0)) %></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
