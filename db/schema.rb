@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530113102) do
+ActiveRecord::Schema.define(version: 20150530122904) do
+
+  create_table "podcasts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "summary"
+    t.string   "search_keywords"
+    t.string   "mail_address"
+    t.integer  "media_type"
+    t.string   "podcaster_name"
+    t.string   "copyright"
+    t.boolean  "include_adult_content"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
