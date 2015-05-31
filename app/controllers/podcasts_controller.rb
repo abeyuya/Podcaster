@@ -4,7 +4,7 @@ class PodcastsController < ApplicationController
   # GET /podcasts
   # GET /podcasts.json
   def index
-    @podcasts = Podcast.all
+    @podcasts = current_user.podcasts
   end
 
   # GET /podcasts/1
@@ -14,7 +14,7 @@ class PodcastsController < ApplicationController
 
   # GET /podcasts/new
   def new
-    @podcast = Podcast.new
+    @podcast = current_user.podcasts.new
   end
 
   # GET /podcasts/1/edit
@@ -24,7 +24,7 @@ class PodcastsController < ApplicationController
   # POST /podcasts
   # POST /podcasts.json
   def create
-    @podcast = Podcast.new(podcast_params)
+    @podcast = current_user.podcasts.new(podcast_params)
 
     respond_to do |format|
       if @podcast.save
@@ -64,7 +64,7 @@ class PodcastsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_podcast
-      @podcast = Podcast.find(params[:id])
+      @podcast = current_user.podcasts.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

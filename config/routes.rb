@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'home#index'
   get  'home/index'
 
-  resources :podcasts
+  resources :podcasts do
+    resources :episodes
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

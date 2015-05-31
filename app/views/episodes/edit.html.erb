@@ -1,0 +1,6 @@
+<h1>Editing Episode</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', podcast_episode_path(@episode.podcast, @episode) %> |
+<%= link_to 'Back', podcast_episodes_path(@episode.podcast) %>
