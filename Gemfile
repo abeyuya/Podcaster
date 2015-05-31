@@ -30,6 +30,9 @@ gem 'bootstrap-sass'
 # Ignore developer info
 gem 'dotenv-rails'
 
+# File uploader
+gem 'carrierwave'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

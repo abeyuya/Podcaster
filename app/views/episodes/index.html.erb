@@ -2,12 +2,13 @@
 
 <h1>Listing Episodes</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
       <th>Show notes</th>
+      <th>Audio</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= episode.title %></td>
         <td><%= episode.description %></td>
         <td><%= episode.show_notes %></td>
+        <td><%= episode.audio.current_path %></td>
         <td><%= link_to 'Show', podcast_episode_path(episode.podcast, episode) %></td>
         <td><%= link_to 'Edit', edit_podcast_episode_path(episode.podcast, episode) %></td>
         <td><%= link_to 'Destroy', podcast_episode_path(episode.podcast, episode), method: :delete, data: { confirm: 'Are you sure?' } %></td>

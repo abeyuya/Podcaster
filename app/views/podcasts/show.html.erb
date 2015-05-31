@@ -1,4 +1,57 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Detail</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tr>
+    <td>title</td>
+    <td><%= @podcast.title %></td>
+  </tr>
+  <tr>
+    <td>subtitle</td>
+    <td><%= @podcast.subtitle %></td>
+  </tr>
+  <tr>
+    <td>summary</td>
+    <td><%= @podcast.summary %></td>
+  </tr>
+  <tr>
+    <td>search_keywords</td>
+    <td><%= @podcast.search_keywords %></td>
+  </tr>
+  <tr>
+    <td>mail_address</td>
+    <td><%= @podcast.mail_address %></td>
+  </tr>
+  <tr>
+    <td>media_type</td>
+    <td><%= @podcast.media_type %></td>
+  </tr>
+  <tr>
+    <td>podcaster_name</td>
+    <td><%= @podcast.podcaster_name %></td>
+  </tr>
+  <tr>
+    <td>copyright</td>
+    <td><%= @podcast.copyright %></td>
+  </tr>
+  <tr>
+    <td>include_adult_content</td>
+    <td><%= @podcast.include_adult_content %></td>
+  </tr>
+
+</table>
+
+
+<h2><%= link_to "Episodes", podcast_episodes_path(@podcast) %></h2>
+
+
 <%= link_to 'Edit', edit_podcast_path(@podcast) %> |
 <%= link_to 'Back', podcasts_path %>

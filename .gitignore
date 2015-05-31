@@ -21,3 +21,6 @@
 
 # Developer info
 .env
+
+# Upload file
+/public/uploads

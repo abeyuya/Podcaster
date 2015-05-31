@@ -11,18 +11,36 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td><%= f.label :title %></td>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :description %></td>
+        <td><%= f.text_field :description %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :show_notes %></td>
+        <td><%= f.text_area :show_notes %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :audio %></td>
+        <td><%= f.file_field :audio %></td>
+      </tr>
+
+    </table>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :show_notes %><br>
-    <%= f.text_area :show_notes %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
