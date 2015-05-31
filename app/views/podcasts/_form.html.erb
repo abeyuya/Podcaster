@@ -56,6 +56,10 @@
         <td><%= f.label :include_adult_content %></td>
         <td><%= f.select :include_adult_content, options_for_select(["NO", "YES"], (@podcast.include_adult_content ? 1 : 0)) %></td>
       </tr>
+      <tr>
+        <td><%= f.label :artwork %></td>
+        <td><%= f.file_field :artwork %></td>
+      </tr>
 
     </table>
   </div>

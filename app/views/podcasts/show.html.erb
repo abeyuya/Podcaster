@@ -15,6 +15,10 @@
     <td><%= @podcast.title %></td>
   </tr>
   <tr>
+    <td>artwork</td>
+    <td><%= image_tag @podcast.artwork.url, :size => '50x50' %></td>
+  </tr>
+  <tr>
     <td>subtitle</td>
     <td><%= @podcast.subtitle %></td>
   </tr>

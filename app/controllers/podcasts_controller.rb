@@ -71,6 +71,6 @@ class PodcastsController < ApplicationController
     def podcast_params
       params[:podcast]["media_type"] = params[:podcast]["media_type"].to_i
       params[:podcast]["include_adult_content"] = params[:podcast]["include_adult_content"].to_i
-      params[:podcast].permit(:title, :subtitle, :summary, :search_keywords, :mail_address, :media_type, :podcaster_name, :copyright, :include_adult_content)
+      params[:podcast].permit(:title, :subtitle, :summary, :search_keywords, :mail_address, :media_type, :podcaster_name, :copyright, :include_adult_content, :artwork)
     end
 end
